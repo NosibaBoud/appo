@@ -4,11 +4,20 @@ namespace App\Http\Controllers;
 
 use App\Models\HomeAppointment;
 use App\Models\UserInvestigation;
+use App\Models\User;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 
 class AppointmentController extends Controller
 {
+
+    public function index()
+    {
+        $users = User::with('homeAppointments', 'mytests.investigation')->get();
+
+        return view('appointments.index', compact('users'));
+    }
+
     public function create(){
         return view('make appointment');
     }

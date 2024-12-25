@@ -13,6 +13,7 @@ use App\Models\Investigation;
 use App\Models\UserInvestigation;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+Route::get('/appointments', [AppointmentController::class, 'index']);
 
 Route::get('/', function () {
     return view('home');

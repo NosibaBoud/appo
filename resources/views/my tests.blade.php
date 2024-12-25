@@ -17,7 +17,7 @@
         @foreach($tests as $test)
         <div class="card">
           <div class="card-content">
-        <ul>{{$test->name }}</ul>
+        <ul>{{$test->investigation->name}}</ul>
         <form action="{{ route('investigation.destroy', $test->id) }}" method="POST">
           @csrf
           @method('DELETE')

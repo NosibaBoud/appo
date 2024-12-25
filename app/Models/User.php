@@ -31,6 +31,10 @@ class User extends Authenticatable
 {
     return $this->hasMany(UserInvestigation::class);
 }
+public function homeAppointments()
+{
+    return $this->hasMany(HomeAppointment::class);
+}
 
     /**
      * The attributes that should be hidden for serialization.
